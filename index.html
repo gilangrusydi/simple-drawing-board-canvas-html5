@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drawing Board - Canvas HTML5</title>
+    <!-- Style -->
+    <style>
+        /* Set Global Style */
+        *{
+            margin:0;
+            padding:0;
+            outline: none;
+            box-sizing: border-box;
+            font-family: "Helvetica", sans-serif;
+            color:#fff;
+            font-size: 1em;
+        }
+
+        body {
+            background: #f1f1f1;
+        }
+
+        /* Container */
+        .container {
+            width: 80%;
+            margin: 25px auto;
+        }
+
+        .group {
+            width: auto;
+            margin: 15px auto;
+            text-align: center;
+        }
+
+        /* Global Button */
+        button {
+            padding:5px 10px;
+            transition: .2s ease;
+            border:none;
+            background: #666;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button.black{background:#333;}
+        button.red{background:red;}
+        button.green{background: green;}
+
+        button.active {
+            opacity: .6;
+        }
+
+        /* Canvas */
+        canvas {
+            display: block;
+            border: 1px solid rgba(0, 0, 0, 0.2);
+            margin: 0 auto;
+            background: #fff;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Container -->
+    <div class="container">
+        <!-- Top Button  -->
+        <div class="group">
+            <button data-color="black" class="black">Black</button>
+            <button data-color="red" class="red">Red</button>
+            <button data-color="green" class="green">Green</button>
+        </div>
+        <!-- Canvas -->
+        <canvas width="800" height="500"></canvas>
+        <!-- Bottom Button -->
+        <div class="group">
+            <button id="clear">Clear</button>
+        </div>
+    </div>
+    <!-- Script -->
+    <script src="js/draw.js"></script>
+    <script>
+        window.onload = ()=>{
+            draw = new Draw();
+        }
+    </script>
+</body>
+</html>
